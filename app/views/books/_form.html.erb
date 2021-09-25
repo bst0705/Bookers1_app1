@@ -1,11 +1,14 @@
 <%= form_with model:book, local:true do |f| %>
+
   <% if book.errors.any? %>
+  <%= book.errors.count %>件のerrorが発生しました
+
     <div id="error_explanation">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
       <% book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li>can't be blank<%= message %></li>
       <% end %>
       </ul>
     </div>
